@@ -29,12 +29,18 @@ figure {
 div.whole {
   position: relative;
   margin: auto;
-  width: 554px;
+  width: 586px;
 }
 
 div.again-div {
   position: absolute;
   top: 120px;
+}
+
+div.start-div {
+  position: absolute;
+  top: 180px;
+  width: 586px;
 }
 
 .invisible {
