@@ -2,18 +2,24 @@
   window.SG = window.SG || {};
 
   var View = SG.View = function ($el) {
+    $('.start-div').removeClass('invisible')
     this.$el = $el;
 
-    this.board = new SG.Board(17);
+    this.board = new SG.Board(18);
     this.setupGrid();
+    $(window).on("keydown", this.handleKeyEvent.bind(this));
+    $('button.start').on("click", this.start.bind(this));
+  };
+
+  View.prototype.start = function (event) {
+    event.preventDefault();
+    $('.start-div').addClass('invisible');
 
     this.intervalId = window.setInterval(
       this.step.bind(this),
       View.STEP_MILLIS
     );
-
-    $(window).on("keydown", this.handleKeyEvent.bind(this));
-  };
+  }
 
   View.KEYS = {
     38: "N",
@@ -102,6 +108,7 @@
   View.prototype.playAgain = function (e) {
     e.preventDefault();
     $('.again-div').addClass('invisible')
+    $('button.start').off("click");
     new SG.View($(".snake-game"));
   };
 })();
