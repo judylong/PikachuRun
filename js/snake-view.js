@@ -2,7 +2,7 @@
   window.SG = window.SG || {};
 
   var View = SG.View = function ($el) {
-    $('.start-div').removeClass('invisible')
+    $('.start-div').removeClass('invisible');
     this.$el = $el;
 
     this.board = new SG.Board(18);
@@ -19,7 +19,7 @@
       this.step.bind(this),
       View.STEP_MILLIS
     );
-  }
+  };
 
   View.KEYS = {
     38: "N",
@@ -107,7 +107,7 @@
 
   View.prototype.playAgain = function (e) {
     e.preventDefault();
-    $('.again-div').addClass('invisible')
+    $('.again-div').addClass('invisible');
     $('button.start').off("click");
     new SG.View($(".snake-game"));
   };
