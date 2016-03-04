@@ -98,3 +98,12 @@ button {
 .title {
   margin-top: 20px;
 }
+
+i {
+  padding: 5px;
+  color: gray;
+}
+
+i:hover {
+  color: #e81c1c;
+}
