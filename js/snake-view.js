@@ -7,14 +7,14 @@
 
     this.board = new SG.Board(18);
     this.setupGrid();
+
     $(window).on("keydown", this.handleKeyEvent.bind(this));
-    $('button.start').on("click", this.start.bind(this));
+
   };
 
-  View.prototype.start = function (event) {
-    event.preventDefault();
+  View.prototype.start = function () {
     $('.start-div').addClass('invisible');
-
+    // console.log("starting...")
     this.intervalId = window.setInterval(
       this.step.bind(this),
       View.STEP_MILLIS
@@ -32,8 +32,17 @@
 
   View.prototype.handleKeyEvent = function (event) {
     event.preventDefault();
-    if (View.KEYS[event.keyCode]) {
+    if (View.KEYS[event.keyCode] && ($($('.start-div')[0]).hasClass('invisible') &&
+                                     $($('.again-div')[0]).hasClass('invisible')) ) {
       this.board.snake.turn(View.KEYS[event.keyCode]);
+    } else {
+      if (!$($('.start-div')[0]).hasClass('invisible') || !$($('.again-div')[0]).hasClass('invisible')) {
+        $('.start-div').addClass('invisible');
+        $('.again-div').addClass('invisible');
+        this.board = new SG.Board(18);
+        this.setupGrid();
+        this.start();
+      }
     }
   };
 
@@ -101,14 +110,7 @@
     } else {
       window.clearInterval(this.intervalId);
       $('.again-div').removeClass('invisible');
-      $('.again').click(this.playAgain.bind(this));
     }
   };
 
-  View.prototype.playAgain = function (e) {
-    e.preventDefault();
-    $('.again-div').addClass('invisible');
-    $('button.start').off("click");
-    new SG.View($(".snake-game"));
-  };
 })();
