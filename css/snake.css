@@ -34,6 +34,7 @@ div.whole {
 
 div.again-div {
   position: absolute;
+  width: 586px;
   top: 120px;
 }
 
@@ -88,11 +89,6 @@ li {
 .snake-head-W {
   background: url('../images/trainer-w.gif');
   background-repeat: no-repeat;
-}
-
-button {
-  outline: 1px solid black;
-  background: white;
 }
 
 .title {
