@@ -1,7 +1,8 @@
 # Pikachu Run
-[Live][live-link]  
-[live-link]: http://judylong.xyz/PikachuRun/
 
+[Live][live-link]  
+
+[live-link]: http://judylong.xyz/PikachuRun/
 
 [![pic](./images/pikarun.png)][live-link]
 
