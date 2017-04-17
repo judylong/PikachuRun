@@ -1,5 +1,5 @@
 # Pikachu Run
-[Live] [live-link]  
+[Live][live-link]  
 [live-link]: http://judylong.xyz/PikachuRun/
 
 
