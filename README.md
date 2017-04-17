@@ -3,8 +3,8 @@
 [live-link]: http://judylong.xyz/PikachuRun/
 
 
-[![pic][pic-path]][live-link]
-[pic-path]: ./images/pikarun.png
+[![pic](./images/pikarun.png)][live-link]
+
 ## About
 This is a take on the classic arcade game Snake with a Pokemon theme.
 
